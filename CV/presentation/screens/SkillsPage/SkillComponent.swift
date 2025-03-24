@@ -7,21 +7,20 @@
 
 import SwiftUI
 
-struct Skill: View {
+struct SkillComponent: View {
     let iconName: String
-    let description: String
-    let color: Color
-    let skillClicked:(String) -> Void
+    let skillClicked:(Skill) -> Void
+    let skill: Skill
     var body: some View {
-        Button(action: {skillClicked(description)}
+        Button(action: {skillClicked(skill)}
         ){
             HStack{
-                Image(systemName: iconName)
+                Image(systemName: skill.icon)
                     .font(.largeTitle)
                     .frame(width:50)
                     .padding(.trailing, 10)
                     .foregroundColor(.lightGrayCV)
-                Text(description)
+                Text(skill.title)
                     .fontWeight(.semibold)
                     .foregroundStyle(.lightGrayCV)
                     .font(.title2)
@@ -32,7 +31,7 @@ struct Skill: View {
             .background{
                 RoundedRectangle(cornerRadius: 12)
                 //.foregroundStyle(color)
-                    .foregroundColor(color)
+                    .foregroundColor(skill.color)
                     .opacity(0.80)
                     .brightness(-0.2)
             }
@@ -42,11 +41,10 @@ struct Skill: View {
 }
 
 #Preview {
-    Skill(
+    SkillComponent(
         iconName: "person.2.crop.square.stack.fill",
-        description: "A multiline description about a feature paired with the image on the left.",
-        color: Color.blue,
         skillClicked: { (skill) in
-            print("Skill clicked: \(skill)")}
+            print("Skill clicked: \(skill)")},
+        skill: .kmp
     )
 }

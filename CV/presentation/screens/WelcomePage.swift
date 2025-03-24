@@ -27,7 +27,7 @@ struct WelcomePage: View {
                 .font(.largeTitle)
                 .padding(.top)
                 .foregroundColor(.textAccent)
-            .fontWeight(.semibold)
+            .fontWeight(.bold)
             
             Text ("Sebastian Corradi")
                 .font(.title2)

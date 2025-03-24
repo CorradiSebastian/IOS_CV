@@ -9,38 +9,62 @@ import SwiftUI
 
 struct SkillsPage: View {
     @StateObject private var viewModel = SkillsPageViewModel() // ✅ Uses ViewModel as state holder
+    @State private var skills: [Skill] = []
+    
+    @State private var selectedSkill: Skill? // Track the selected skill
+    @State private var showSheet = false // Control sheet visibility
+    
+    
     var body: some View {
+        let skills = viewModel.skills
+
+        
         VStack(spacing: 20){
-//            Text(viewModel.text)
-//            Button("Update Text") {
-//                viewModel.updateText(message: "hola")
-//                        }
+            
             Text("Skills")
-                .font(.title)
-                .fontWeight(.semibold)
+                .font(.largeTitle)
+                .fontWeight(.bold)
                 .padding(20)
                 .foregroundColor(.textAccent)
             
-            Skill(iconName: "iphone.gen3",
-                  description: "Android 9 years of experience",
-                  color: Color.red,
-                  skillClicked: viewModel.skillClicked)
-            Skill(iconName: "applewatch",
-                  description: "Android wear - Learning",
-                  color:Color.blue,
-                  skillClicked: viewModel.skillClicked)
-            Skill(iconName: "iphone.gen3",
-                  description: "IOS - Learning",
-                  color: Color.green,
-                  skillClicked: viewModel.skillClicked)
-            Skill(iconName: "iphone.gen3",
-                  description: "KMP - Learning",
-                  color: Color.purple,
-                  skillClicked: viewModel.skillClicked)
+            SkillComponent(iconName: "iphone.gen3",
+                skillClicked: viewModel.skillClicked,
+                skill: Skill.android)
+                  
+            SkillComponent(iconName: "applewatch",
+                skillClicked: viewModel.skillClicked,
+                skill: .android_wear)
             
+            SkillComponent(iconName: "iphone.gen3",
+                //skillClicked: viewModel.skillClicked,
+                skillClicked: displayDetails,
+                skill: .ios)
+            
+            SkillComponent(iconName: "iphone.gen3",
+                skillClicked: { skill in
+                selectedSkill = skill // Set the selected skill
+                showSheet = true // Show the sheet
+            },
+                skill: .kmp)
+            
+            Spacer()
         }
         .padding()
+//        .onAppear {
+//                        print("This is a debug message from SwiftUI")
+//                        print("Skills: \(skills)")
+//                    }
+        //Spacer()
+        .sheet(isPresented: $showSheet) {
+                    if let skill = selectedSkill {
+                        SkillDetailsSheet(skill: skill) // Pass the selected skill
+                    }
+                }
     }
+}
+
+func displayDetails(skill: Skill){
+    //
 }
 
 #Preview {
