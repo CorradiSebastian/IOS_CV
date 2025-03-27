@@ -8,28 +8,30 @@
 import SwiftUI
 
 struct SkillDetailsSheet: View {
-    let skill: Skill
+    let skill: Binding<Skill>
+    let text: String
     var body: some View {
         VStack {
-            Text("This is a bottom sheet")
+            Text(skill.wrappedValue.rawValue)
                 .font(.title)
                 .padding()
 
-            Button("Dismiss") {
-                // Dismiss the sheet
-                if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
-                    windowScene.windows.first?.rootViewController?.dismiss(animated: true)
-                }
-            }
-            .padding()
+            Text(skill.wrappedValue.description)
+                .font(.title2)
+                .padding()
         }
         .frame(maxWidth: .infinity, maxHeight: 300)
-        .background(Color.white)
+        .background(skill.wrappedValue.color)
         .cornerRadius(15)
         .shadow(radius: 10)
+        .onAppear {
+            print("---------------------------------------------------------------------------------")
+            print("This is a debug message from SkillDetailsSheet. text vale: \(text)")
+                                               print("SSSkill: \(skill)")
+        }.padding()
     }
 }
 
-#Preview {
-    SkillDetailsSheet(skill: .android)
-}
+//#Preview {
+    //SkillDetailsSheet(skill: .android, text: "oreview")
+//}

@@ -26,10 +26,10 @@ enum Skill: String {
     
     var description: String {
         switch self {
-        case .android: return "Mobile development for Android devices."
-        case .android_wear: return "Development for Android Wear smartwatches."
-        case .ios: return "Mobile development for iOS devices."
-        case .kmp: return "Kotlin Multiplatform for cross-platform apps."
+        case .android: return "Mobile development for Android devices.9 years native development 6 with Java, 3 with Kotlin, Firebase, ROOM, MVVM, Clean, SOLID, etc"
+        case .android_wear: return "Development for Android Wear smartwatches, developing a Health app for senior people and geolocalization"
+        case .ios: return "Mobile development for iOS devices. Learning SwiftUI and Swift, Self learning with mac documentation and chat GPT"
+        case .kmp: return "Kotlin Multiplatform for cross-platform apps. Starting with network modules to be consume for both IOS and Android"
         }
     }
     

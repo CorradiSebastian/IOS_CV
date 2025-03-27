@@ -11,12 +11,13 @@ struct SkillsPage: View {
     @StateObject private var viewModel = SkillsPageViewModel() // ✅ Uses ViewModel as state holder
     @State private var skills: [Skill] = []
     
-    @State private var selectedSkill: Skill? // Track the selected skill
+    @State private var selectedSkill: Skill = .android// Track the selected skill
     @State private var showSheet = false // Control sheet visibility
+    @State private var text = "" // Control sheet visibility
     
     
     var body: some View {
-        let skills = viewModel.skills
+        //let skills = viewModel.skills
 
         
         VStack(spacing: 20){
@@ -27,40 +28,70 @@ struct SkillsPage: View {
                 .padding(20)
                 .foregroundColor(.textAccent)
             
-            SkillComponent(iconName: "iphone.gen3",
-                skillClicked: viewModel.skillClicked,
-                skill: Skill.android)
-                  
-            SkillComponent(iconName: "applewatch",
-                skillClicked: viewModel.skillClicked,
-                skill: .android_wear)
-            
-            SkillComponent(iconName: "iphone.gen3",
-                //skillClicked: viewModel.skillClicked,
-                skillClicked: displayDetails,
-                skill: .ios)
-            
-            SkillComponent(iconName: "iphone.gen3",
+            SkillComponent(
+                skill: Skill.android,
                 skillClicked: { skill in
-                selectedSkill = skill // Set the selected skill
-                showSheet = true // Show the sheet
-            },
-                skill: .kmp)
+                    DispatchQueue.main.async {
+                        selectedSkill = .android // Set the selected skill
+                        showSheet = true // Show the sheet
+                    }
+                }
+            )
             
+            SkillComponent(
+                skill: .android_wear,
+                skillClicked: { theSkill in
+                    print("callback, skill: \(theSkill)")
+                    DispatchQueue.main.async {
+                        selectedSkill = .android_wear // Set the selected skill
+                        showSheet = true // Show the sheet
+                    }
+                }
+            )
+            
+            SkillComponent(
+                skill: .ios,
+                skillClicked: { theSkill in
+                    updateSkill(skill: theSkill, message: "KMP clicked")
+                }
+            )
+            
+            SkillComponent(
+                skill: .kmp,
+                skillClicked: { theSkill in
+                    print("callback, skill: \(theSkill)")
+                    selectedSkill = theSkill // Set the selected skill
+                    text = "kmp clicked"
+                    DispatchQueue.main.async {
+                        selectedSkill = theSkill // Set the selected skill
+                        text = "kmp clicked"
+                        print("from skillpage, text: \(text), selected: \(selectedSkill)")
+                        showSheet = true // Show the sheet
+                    }
+                }
+            )
             Spacer()
         }
         .padding()
-//        .onAppear {
-//                        print("This is a debug message from SwiftUI")
-//                        print("Skills: \(skills)")
-//                    }
-        //Spacer()
-        .sheet(isPresented: $showSheet) {
-                    if let skill = selectedSkill {
-                        SkillDetailsSheet(skill: skill) // Pass the selected skill
-                    }
-                }
+        .sheet(isPresented: $showSheet){
+            ZStack {
+                Color.yellow.ignoresSafeArea() // Covers the entire sheet background
+                SkillDetailsSheet(skill: $selectedSkill, text: text)
+            }
+            .presentationDetents([.fraction(0.5)])
+        }
     }
+    
+    private func updateSkill(skill: Skill, message: String) {
+            selectedSkill = skill
+            text = message
+
+            // Slight delay to ensure state updates before showing the sheet
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.11) {
+                print("from skillpage, text: \(text), selected: \(selectedSkill)")
+                showSheet = true
+            }
+        }
 }
 
 func displayDetails(skill: Skill){
@@ -70,3 +101,5 @@ func displayDetails(skill: Skill){
 #Preview {
     SkillsPage()
 }
+
+

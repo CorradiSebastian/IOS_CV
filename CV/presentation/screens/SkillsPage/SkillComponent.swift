@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct SkillComponent: View {
-    let iconName: String
-    let skillClicked:(Skill) -> Void
     let skill: Skill
+    let skillClicked:(Skill) -> Void
     var body: some View {
-        Button(action: {skillClicked(skill)}
+        Button(action: {
+            print("button clicked, skill: \(skill)")
+            skillClicked(skill)}
         ){
             HStack{
                 Image(systemName: skill.icon)
@@ -42,9 +43,8 @@ struct SkillComponent: View {
 
 #Preview {
     SkillComponent(
-        iconName: "person.2.crop.square.stack.fill",
+        skill: .kmp,
         skillClicked: { (skill) in
-            print("Skill clicked: \(skill)")},
-        skill: .kmp
+            print("Skill clicked: \(skill)")}
     )
 }
