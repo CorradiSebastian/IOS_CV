@@ -9,9 +9,6 @@ import Combine
 
 class SkillsPageViewModel: ObservableObject {
     private let repository: SkillsRepository
-    
-    @Published var text: String = "Hello, Guybrush"
-    @Published var skillDetail: String = "Hello, Guybrush"
     @Published var skills: [Skill] = []
     @Published var otherSkills: [OtherSkill] = []
     
@@ -26,15 +23,11 @@ class SkillsPageViewModel: ObservableObject {
         }
     
     }
-    func updateText(message: String) {
-        text = message
-    }
     
     func skillClicked(skill: Skill) {
         Task {
             let detail = await repository.getSkillDetails(skill: skill)
         }
-        text = skill.rawValue
     }
 
 }

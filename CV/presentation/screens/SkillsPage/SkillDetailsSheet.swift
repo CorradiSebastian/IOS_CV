@@ -9,13 +9,12 @@ import SwiftUI
 
 struct SkillDetailsSheet: View {
     let skill: Binding<Skill>
-    let text: String
     var body: some View {
         VStack {
             Text(skill.wrappedValue.rawValue)
                 .font(.title)
                 .padding()
-
+            
             Text(skill.wrappedValue.description)
                 .font(.title2)
                 .padding()
@@ -24,14 +23,10 @@ struct SkillDetailsSheet: View {
         .background(skill.wrappedValue.color)
         .cornerRadius(15)
         .shadow(radius: 10)
-        .onAppear {
-            print("---------------------------------------------------------------------------------")
-            print("This is a debug message from SkillDetailsSheet. text vale: \(text)")
-                                               print("SSSkill: \(skill)")
-        }.padding()
+        .padding()
     }
 }
 
-//#Preview {
-    //SkillDetailsSheet(skill: .android, text: "oreview")
-//}
+#Preview {
+    SkillDetailsSheet(skill: .constant(.android)) // ✅ Using `.constant()` for preview
+}

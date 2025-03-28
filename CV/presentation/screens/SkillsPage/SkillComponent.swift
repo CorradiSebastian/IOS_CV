@@ -12,7 +12,6 @@ struct SkillComponent: View {
     let skillClicked:(Skill) -> Void
     var body: some View {
         Button(action: {
-            print("button clicked, skill: \(skill)")
             skillClicked(skill)}
         ){
             HStack{
@@ -28,10 +27,8 @@ struct SkillComponent: View {
                 Spacer()
             }
             .padding()
-            //.background(.tint, in:RoundedRectangle(cornerRadius: 12))
             .background{
                 RoundedRectangle(cornerRadius: 12)
-                //.foregroundStyle(color)
                     .foregroundColor(skill.color)
                     .opacity(0.80)
                     .brightness(-0.2)
