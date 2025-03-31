@@ -10,4 +10,5 @@ import Foundation
 protocol SkillsRepository {
     func getSkillDetails(skill: Skill) async -> String
     func getSkills() async throws -> [Skill]
+    func getOtherSkills() async throws -> [OtherSkill]
 }

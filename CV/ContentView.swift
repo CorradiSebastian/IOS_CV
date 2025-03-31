@@ -17,6 +17,7 @@ struct ContentView: View {
         TabView {
             WelcomePage()
             SkillsPage()
+            OtherSkillsPage()
             PersonalData()
         }
         .background(Gradient(colors: gradientColors))

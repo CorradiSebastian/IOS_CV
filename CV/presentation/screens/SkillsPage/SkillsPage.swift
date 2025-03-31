@@ -15,7 +15,7 @@ struct SkillsPage: View {
     @State private var showSheet = false // Control sheet visibility
     
     var body: some View {
-        //let skills = viewModel.skills
+        let skills = viewModel.skills
 
         
         VStack(spacing: 20){
@@ -26,42 +26,18 @@ struct SkillsPage: View {
                 .padding(20)
                 .foregroundColor(.textAccent)
             
-            SkillComponent(
-                skill: Skill.android,
-                skillClicked: { skill in
-                    DispatchQueue.main.async {
-                        selectedSkill = .android // Set the selected skill
-                        showSheet = true // Show the sheet
-                    }
-                }
-            )
+            ForEach(viewModel.skills, id: \.self) { skill in
+                            SkillComponent(
+                                skill: skill,
+                                skillClicked: { skill in
+                                    DispatchQueue.main.async {
+                                        selectedSkill = skill // Set the selected skill
+                                        showSheet = true // Show the sheet
+                                    }
+                                }
+                            )
+                        }
             
-            SkillComponent(
-                skill: .android_wear,
-                skillClicked: { theSkill in
-                    DispatchQueue.main.async {
-                        selectedSkill = .android_wear // Set the selected skill
-                        showSheet = true // Show the sheet
-                    }
-                }
-            )
-            
-            SkillComponent(
-                skill: .ios,
-                skillClicked: { theSkill in
-                    updateSkill(skill: theSkill)
-                }
-            )
-            
-            SkillComponent(
-                skill: .kmp,
-                skillClicked: { theSkill in
-                    DispatchQueue.main.async {
-                        selectedSkill = theSkill // Set the selected skill
-                        showSheet = true // Show the sheet
-                    }
-                }
-            )
             Spacer()
         }
         .padding()
@@ -82,10 +58,6 @@ struct SkillsPage: View {
                 showSheet = true
             }
         }
-}
-
-func displayDetails(skill: Skill){
-    //
 }
 
 #Preview {

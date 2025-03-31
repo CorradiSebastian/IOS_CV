@@ -9,11 +9,20 @@
 /* Begin PBXBuildFile section */
 		2B1E9DF52D8DD94A000A8CAA /* SkillsPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E9DF42D8DD94A000A8CAA /* SkillsPageViewModel.swift */; };
 		2B1E9DF82D8DE917000A8CAA /* InThisApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E9DF72D8DE917000A8CAA /* InThisApp.swift */; };
-		2B1E9DFB2D8E1509000A8CAA /* SkillsRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E9DFA2D8E1509000A8CAA /* SkillsRepo.swift */; };
+		2B1E9DFB2D8E1509000A8CAA /* SkillsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E9DFA2D8E1509000A8CAA /* SkillsRepository.swift */; };
 		2B1E9DFD2D8E1582000A8CAA /* SkillsRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E9DFC2D8E1582000A8CAA /* SkillsRepositoryImpl.swift */; };
 		2B1E9E002D8F8732000A8CAA /* Skills.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E9DFF2D8F8732000A8CAA /* Skills.swift */; };
 		2B1E9E032D8F8A48000A8CAA /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E9E022D8F8A48000A8CAA /* LocalDataSource.swift */; };
 		2B1E9E052D91EE92000A8CAA /* SkillDetailsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E9E042D91EE92000A8CAA /* SkillDetailsSheet.swift */; };
+		2B1E9E082D96D334000A8CAA /* OtherSkill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E9E072D96D334000A8CAA /* OtherSkill.swift */; };
+		2B1E9E0A2D96D34C000A8CAA /* OtherSkillComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E9E092D96D34C000A8CAA /* OtherSkillComponent.swift */; };
+		2B1E9E0C2D9700CB000A8CAA /* OtherSkillsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E9E0B2D9700CB000A8CAA /* OtherSkillsPage.swift */; };
+		2B1E9E0E2D9701CD000A8CAA /* OtherSkillsPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E9E0D2D9701CD000A8CAA /* OtherSkillsPageViewModel.swift */; };
+		2B1E9E102D9764C0000A8CAA /* OtherSkillDetailSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E9E0F2D9764C0000A8CAA /* OtherSkillDetailSheet.swift */; };
+		2B1E9E132D9ADFC2000A8CAA /* CatsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E9E122D9ADFC2000A8CAA /* CatsPage.swift */; };
+		2B1E9E152D9ADFD1000A8CAA /* CatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E9E142D9ADFD1000A8CAA /* CatsViewModel.swift */; };
+		2B1E9E172D9AE03B000A8CAA /* CatComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E9E162D9AE03B000A8CAA /* CatComponent.swift */; };
+		2B1E9E192D9AE049000A8CAA /* Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E9E182D9AE049000A8CAA /* Cat.swift */; };
 		2BB4C0872D8CC04E00A35D0E /* CVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB4C0862D8CC04E00A35D0E /* CVApp.swift */; };
 		2BB4C0892D8CC04E00A35D0E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB4C0882D8CC04E00A35D0E /* ContentView.swift */; };
 		2BB4C08B2D8CC04F00A35D0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BB4C08A2D8CC04F00A35D0E /* Assets.xcassets */; };
@@ -27,11 +36,20 @@
 /* Begin PBXFileReference section */
 		2B1E9DF42D8DD94A000A8CAA /* SkillsPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsPageViewModel.swift; sourceTree = "<group>"; };
 		2B1E9DF72D8DE917000A8CAA /* InThisApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InThisApp.swift; sourceTree = "<group>"; };
-		2B1E9DFA2D8E1509000A8CAA /* SkillsRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsRepo.swift; sourceTree = "<group>"; };
+		2B1E9DFA2D8E1509000A8CAA /* SkillsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsRepository.swift; sourceTree = "<group>"; };
 		2B1E9DFC2D8E1582000A8CAA /* SkillsRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsRepositoryImpl.swift; sourceTree = "<group>"; };
 		2B1E9DFF2D8F8732000A8CAA /* Skills.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skills.swift; sourceTree = "<group>"; };
 		2B1E9E022D8F8A48000A8CAA /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
 		2B1E9E042D91EE92000A8CAA /* SkillDetailsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillDetailsSheet.swift; sourceTree = "<group>"; };
+		2B1E9E072D96D334000A8CAA /* OtherSkill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherSkill.swift; sourceTree = "<group>"; };
+		2B1E9E092D96D34C000A8CAA /* OtherSkillComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherSkillComponent.swift; sourceTree = "<group>"; };
+		2B1E9E0B2D9700CB000A8CAA /* OtherSkillsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherSkillsPage.swift; sourceTree = "<group>"; };
+		2B1E9E0D2D9701CD000A8CAA /* OtherSkillsPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherSkillsPageViewModel.swift; sourceTree = "<group>"; };
+		2B1E9E0F2D9764C0000A8CAA /* OtherSkillDetailSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherSkillDetailSheet.swift; sourceTree = "<group>"; };
+		2B1E9E122D9ADFC2000A8CAA /* CatsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsPage.swift; sourceTree = "<group>"; };
+		2B1E9E142D9ADFD1000A8CAA /* CatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsViewModel.swift; sourceTree = "<group>"; };
+		2B1E9E162D9AE03B000A8CAA /* CatComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatComponent.swift; sourceTree = "<group>"; };
+		2B1E9E182D9AE049000A8CAA /* Cat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cat.swift; sourceTree = "<group>"; };
 		2BB4C0832D8CC04E00A35D0E /* CV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BB4C0862D8CC04E00A35D0E /* CVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVApp.swift; sourceTree = "<group>"; };
 		2BB4C0882D8CC04E00A35D0E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,7 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				2B1E9E012D8F8A2C000A8CAA /* datasource */,
-				2B1E9DFA2D8E1509000A8CAA /* SkillsRepo.swift */,
+				2B1E9DFA2D8E1509000A8CAA /* SkillsRepository.swift */,
 				2B1E9DFC2D8E1582000A8CAA /* SkillsRepositoryImpl.swift */,
 			);
 			path = repository;
@@ -86,7 +104,9 @@
 		2B1E9DFE2D8F86EC000A8CAA /* model */ = {
 			isa = PBXGroup;
 			children = (
+				2B1E9E072D96D334000A8CAA /* OtherSkill.swift */,
 				2B1E9DFF2D8F8732000A8CAA /* Skills.swift */,
+				2B1E9E182D9AE049000A8CAA /* Cat.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -97,6 +117,27 @@
 				2B1E9E022D8F8A48000A8CAA /* LocalDataSource.swift */,
 			);
 			path = datasource;
+			sourceTree = "<group>";
+		};
+		2B1E9E062D96D2FA000A8CAA /* OtherSkillsPage */ = {
+			isa = PBXGroup;
+			children = (
+				2B1E9E092D96D34C000A8CAA /* OtherSkillComponent.swift */,
+				2B1E9E0B2D9700CB000A8CAA /* OtherSkillsPage.swift */,
+				2B1E9E0D2D9701CD000A8CAA /* OtherSkillsPageViewModel.swift */,
+				2B1E9E0F2D9764C0000A8CAA /* OtherSkillDetailSheet.swift */,
+			);
+			path = OtherSkillsPage;
+			sourceTree = "<group>";
+		};
+		2B1E9E112D9ADF9E000A8CAA /* CatsPage */ = {
+			isa = PBXGroup;
+			children = (
+				2B1E9E122D9ADFC2000A8CAA /* CatsPage.swift */,
+				2B1E9E142D9ADFD1000A8CAA /* CatsViewModel.swift */,
+				2B1E9E162D9AE03B000A8CAA /* CatComponent.swift */,
+			);
+			path = CatsPage;
 			sourceTree = "<group>";
 		};
 		2BB4C07A2D8CC04E00A35D0E = {
@@ -148,6 +189,8 @@
 		2BB4C0952D8CC15F00A35D0E /* screens */ = {
 			isa = PBXGroup;
 			children = (
+				2B1E9E112D9ADF9E000A8CAA /* CatsPage */,
+				2B1E9E062D96D2FA000A8CAA /* OtherSkillsPage */,
 				2B1E9DF62D8DE8F1000A8CAA /* InThisApp */,
 				2B1E9DF32D8DD902000A8CAA /* SkillsPage */,
 				2BB4C0962D8CC19100A35D0E /* WelcomePage.swift */,
@@ -227,17 +270,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BB4C0972D8CC19100A35D0E /* WelcomePage.swift in Sources */,
+				2B1E9E0C2D9700CB000A8CAA /* OtherSkillsPage.swift in Sources */,
 				2BB4C0992D8CC42C00A35D0E /* SkillsPage.swift in Sources */,
+				2B1E9E132D9ADFC2000A8CAA /* CatsPage.swift in Sources */,
 				2B1E9DF82D8DE917000A8CAA /* InThisApp.swift in Sources */,
 				2BB4C09B2D8CC43D00A35D0E /* SkillComponent.swift in Sources */,
 				2B1E9DFD2D8E1582000A8CAA /* SkillsRepositoryImpl.swift in Sources */,
 				2BB4C0892D8CC04E00A35D0E /* ContentView.swift in Sources */,
+				2B1E9E172D9AE03B000A8CAA /* CatComponent.swift in Sources */,
+				2B1E9E102D9764C0000A8CAA /* OtherSkillDetailSheet.swift in Sources */,
+				2B1E9E082D96D334000A8CAA /* OtherSkill.swift in Sources */,
 				2B1E9E032D8F8A48000A8CAA /* LocalDataSource.swift in Sources */,
 				2BB4C09D2D8D97F300A35D0E /* PersonalDataPage.swift in Sources */,
+				2B1E9E0A2D96D34C000A8CAA /* OtherSkillComponent.swift in Sources */,
+				2B1E9E192D9AE049000A8CAA /* Cat.swift in Sources */,
+				2B1E9E152D9ADFD1000A8CAA /* CatsViewModel.swift in Sources */,
 				2B1E9E052D91EE92000A8CAA /* SkillDetailsSheet.swift in Sources */,
 				2B1E9E002D8F8732000A8CAA /* Skills.swift in Sources */,
 				2BB4C0872D8CC04E00A35D0E /* CVApp.swift in Sources */,
-				2B1E9DFB2D8E1509000A8CAA /* SkillsRepo.swift in Sources */,
+				2B1E9E0E2D9701CD000A8CAA /* OtherSkillsPageViewModel.swift in Sources */,
+				2B1E9DFB2D8E1509000A8CAA /* SkillsRepository.swift in Sources */,
 				2B1E9DF52D8DD94A000A8CAA /* SkillsPageViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

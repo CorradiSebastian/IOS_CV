@@ -51,13 +51,3 @@ enum Skill: String {
         }
     }
 }
-
-enum OtherSkill: String {
-    case mvvm = "Model View ViewModel"
-    case mvi = "Model View Intent"
-    case clean = "Clean architecture"
-    case solid = "SOLID principles"
-    case scrum = "Scrum methodology"
-    case git = "GIT repository and GIT-Flow"
-    case areas = "Healt, Banking, Streaming, Logistics"
-}

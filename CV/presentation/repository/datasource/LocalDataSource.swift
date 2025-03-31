@@ -9,12 +9,11 @@ import Foundation
 
 protocol LocalDataSource {
     func getSkills() async -> [Skill]
-    func getOtherSkills() -> [OtherSkill]
+    func getOtherSkills() async -> [OtherSkill]
     func getSkillDetail(skill: Skill) -> String
 }
 
 class LocalDataSourceImpl: LocalDataSource {
-    private let storageKey = "saved_users"
 
     func getSkills() async -> [Skill] {
         do{
@@ -25,10 +24,16 @@ class LocalDataSourceImpl: LocalDataSource {
         return [.android, .android_wear, .ios, .kmp]
     }
 
-    func getOtherSkills() -> [OtherSkill] {
+    func getOtherSkills() async -> [OtherSkill] {
+        do{
+            try await Task.sleep(nanoseconds: 1_000_000_000)
+        } catch{
+            
+        }
         return [.clean, .mvvm, .mvi, .solid, .git, .scrum, .areas]
     }
 
+    //return [.clean, .mvvm, .mvi, .solid, .git, .scrum, .areas]
     func getSkillDetail(skill: Skill) -> String{
         switch skill{
         case .android: return "9 years of experience developing navite applications, konwledge of Java, Kotlin, ROOM, Retrofit, Compose, Kotlin Flows, LiveData, FTP, design and architectural patterns, etc."

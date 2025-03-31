@@ -20,14 +20,15 @@ class SkillsPageViewModel: ObservableObject {
     func loadSkills(){
         Task {
             skills = try await repository.getSkills()
+            print("Skills loaded: \(skills)")
         }
     
     }
     
-    func skillClicked(skill: Skill) {
-        Task {
-            let detail = await repository.getSkillDetails(skill: skill)
-        }
-    }
+//    func skillClicked(skill: Skill) {
+//        Task {
+//            let detail = await repository.getSkillDetails(skill: skill)
+//        }
+//    }
 
 }
